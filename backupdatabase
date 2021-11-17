@@ -1,0 +1,7 @@
+>>> import pyodbc
+>>> connection = pyodbc.connect(driver='{SQL Server Native Client 11.0}', 
+                                server='SQLInstanceName', database='master', 
+                                trusted_connection='yes', autocommit=True)
+>>> backup = "BACKUP DATABASE [<DB_Name>] TO DISK = N'<DB_Name>.bak'"
+>>> cursor = connection.cursor().execute(backup)
+>>> connection.close()
